@@ -10,6 +10,9 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { LinearGradient } from "expo-linear-gradient";
+//import { MaterialCommunityIcons } from "react-native-vector-icons";
 import { Stack, useRouter } from "expo-router";
 
 const Index = () => {
@@ -46,9 +49,59 @@ const Index = () => {
           <Text className="text-sm font-bold text-white">
             NOMBRE DE USUARIO
           </Text>
-          <Text className="text-xs font-normal text-white">
+          <Text className="my-7 text-xs font-normal text-white">
             Bio corto del usuario.
           </Text>
+          <View className="-ml-6 flex flex-row">
+            <View className="place text mr-5 h-10 w-12">
+              <LinearGradient
+                className="rounded-t-[15px]"
+                colors={["#433D9F", "black"]}
+              >
+                <View className="mx-auto pt-3">
+                  <MIcon color="white" size={22} name="heart-outline" />
+                  <Text className="mx-auto text-xs text-white">20</Text>
+                </View>
+              </LinearGradient>
+            </View>
+            <View className="place text mr-5 h-10 w-12">
+              <LinearGradient
+                className="rounded-t-[15px]"
+                colors={["#433D9F", "black"]}
+              >
+                <View className="mx-auto pt-3">
+                  <MIcon
+                    color="white"
+                    size={22}
+                    name="account-multiple-outline"
+                  />
+                  <Text className="mx-auto text-xs text-white">20</Text>
+                </View>
+              </LinearGradient>
+            </View>
+            <View className="place text mr-5 h-10 w-12">
+              <LinearGradient
+                className="rounded-t-[15px]"
+                colors={["#433D9F", "black"]}
+              >
+                <View className="mx-auto pt-3">
+                  <MIcon color="white" size={22} name="television" />
+                  <Text className="mx-auto text-xs text-white">20</Text>
+                </View>
+              </LinearGradient>
+            </View>
+            <View className="place text h-10 w-12">
+              <LinearGradient
+                className="rounded-t-[15px]"
+                colors={["#433D9F", "black"]}
+              >
+                <View className="mx-auto pt-3">
+                  <MIcon color="white" size={22} name="filmstrip" />
+                  <Text className="mx-auto text-xs text-white">20</Text>
+                </View>
+              </LinearGradient>
+            </View>
+          </View>
         </View>
       </View>
     </SafeAreaView>

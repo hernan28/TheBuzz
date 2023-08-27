@@ -57,6 +57,7 @@ const Index = () => {
             </View>
             <View className="m-10">
               <TouchableOpacity
+                onPress={() => router.push("/dashboard")}
                 style={{
                   backgroundColor: "#CBA7EF",
                   borderRadius: 25,

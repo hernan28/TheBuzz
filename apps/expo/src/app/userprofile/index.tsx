@@ -1,36 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from "react";
-import {
-  Button,
-  Image,
-  ImageBackground,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { LinearGradient } from "expo-linear-gradient";
+
 //import { MaterialCommunityIcons } from "react-native-vector-icons";
-import { Stack, useRouter } from "expo-router";
+import TitleStack from "../../commons/TitleStack";
 
 const Index = () => {
   return (
     <SafeAreaView className="bg-[#000000]">
       {/* Changes page title visible on the header */}
-      <Stack.Screen
-        options={{
-          headerTitle: (props) => (
-            <View className="container">
-              <Image
-                className="mx-auto"
-                source={require("../../../assets/Logo-mini.png")}
-              />
-            </View>
-          ),
-        }}
-      />
+      <TitleStack />
       <Image source={require("../../../assets/headerBg.png")} />
       <View className="container flex h-full w-full flex-row space-x-10 bg-black">
         <Image

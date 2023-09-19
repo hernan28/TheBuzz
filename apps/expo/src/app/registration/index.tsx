@@ -10,24 +10,14 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Stack, useRouter } from "expo-router";
+
+import TitleStack from "../../commons/TitleStack";
 
 const Index = () => {
   return (
     <SafeAreaView className="bg-[#000000]">
       {/* Changes page title visible on the header */}
-      <Stack.Screen
-        options={{
-          headerTitle: (props) => (
-            <View className="container">
-              <Image
-                className="mx-auto"
-                source={require("../../../assets/Logo-mini.png")}
-              />
-            </View>
-          ),
-        }}
-      />
+      <TitleStack />
       <ImageBackground
         source={require("../../../assets/backgroundPattern.png")}
         resizeMode="cover"

@@ -1,12 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { useEffect, useState } from "react";
-import { FlatList, Image, Text, View } from "react-native";
+import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Stack } from "expo-router";
+import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { useRouter } from "expo-router";
 
+import TitleStack from "../../commons/TitleStack";
 import { getTrendingFromApiAsync } from "../../utils/externalApi";
 
 const Index = () => {
+  const router = useRouter();
   const [trendingList, setTrendingList] = useState([]);
   useEffect(() => {
     getTrendingFromApiAsync(setTrendingList);
@@ -14,17 +16,13 @@ const Index = () => {
   return (
     <SafeAreaView className="bg-[#000000]">
       {/* Changes page title visible on the header */}
-      <Stack.Screen
-        options={{
-          headerTitle: (props) => (
-            <View className="container">
-              <Image
-                className="mx-auto"
-                source={require("../../../assets/Logo-mini.png")}
-              />
-            </View>
-          ),
-        }}
+      <TitleStack
+        hideBack
+        RightButton={() => (
+          <TouchableOpacity onPress={() => router.push("/userprofile")}>
+            <MIcon color="white" size={22} name="account-outline" />
+          </TouchableOpacity>
+        )}
       />
       <View className="container h-full w-full">
         <Text className="mb-4 pl-10 font-bold uppercase text-white">

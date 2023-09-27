@@ -10,25 +10,16 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Stack, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
+
+import TitleStack from "../commons/TitleStack";
 
 const Index = () => {
   const router = useRouter();
   return (
     <SafeAreaView className="m-0 bg-[#000000] p-0">
       {/* Changes page title visible on the header */}
-      <Stack.Screen
-        options={{
-          headerTitle: (props) => (
-            <View className="container">
-              <Image
-                className="mx-auto"
-                source={require("../../assets/Logo-mini.png")}
-              />
-            </View>
-          ),
-        }}
-      />
+      <TitleStack hideBack />
       <ImageBackground
         source={require("../../assets/backgroundPattern.png")}
         resizeMode="cover"
@@ -57,7 +48,7 @@ const Index = () => {
             </View>
             <View className="m-10">
               <TouchableOpacity
-                onPress={() => router.push("/userprofile")}
+                onPress={() => router.push("/dashboard")}
                 style={{
                   backgroundColor: "#CBA7EF",
                   borderRadius: 25,

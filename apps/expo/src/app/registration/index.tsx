@@ -11,18 +11,18 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import { Stack } from "expo-router";
+
+import TitleStack from "../../commons/TitleStack";
 
 const Index = () => {
   return (
     <SafeAreaView className="bg-[#000000]">
       {/* Changes page title visible on the header */}
-      <Stack.Screen options={{ title: "The Buzz" }} />
+      <TitleStack />
       <ImageBackground
-        source={require("../../assets/backgroundPattern.png")}
+        source={require("../../../assets/backgroundPattern.png")}
         resizeMode="cover"
       >
-        <Stack.Screen />
         <View className="h-full ">
           <LinearGradient
             className="mb-100 m-4 h-fit rounded-lg px-20 pb-20 pt-20"

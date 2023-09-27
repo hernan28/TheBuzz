@@ -19,7 +19,7 @@ const Index = () => {
   return (
     <SafeAreaView className="m-0 bg-[#000000] p-0">
       {/* Changes page title visible on the header */}
-      <TitleStack />
+      <TitleStack hideBack />
       <ImageBackground
         source={require("../../assets/backgroundPattern.png")}
         resizeMode="cover"
@@ -48,7 +48,7 @@ const Index = () => {
             </View>
             <View className="m-10">
               <TouchableOpacity
-                onPress={() => router.push("/userprofile")}
+                onPress={() => router.push("/dashboard")}
                 style={{
                   backgroundColor: "#CBA7EF",
                   borderRadius: 25,

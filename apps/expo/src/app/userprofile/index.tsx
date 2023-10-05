@@ -5,8 +5,42 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import MIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { LinearGradient } from "expo-linear-gradient";
 
+import HorizontalList from "../../commons/HorizontalList";
 //import { MaterialCommunityIcons } from "react-native-vector-icons";
 import TitleStack from "../../commons/TitleStack";
+
+const defaultArray = [
+  {
+    id: 1,
+    title: "movie1",
+    poster_path: "/5gzzkR7y3hnY8AD1wXjCnVlHba5.jpg",
+  },
+  {
+    id: 2,
+    title: "movie2",
+    poster_path: "/mXLOHHc1Zeuwsl4xYKjKh2280oL.jpg",
+  },
+  {
+    id: 3,
+    title: "movie3",
+    poster_path: "/kdPMUMJzyYAc4roD52qavX0nLIC.jpg",
+  },
+  {
+    id: 4,
+    title: "movie4",
+    poster_path: "/oUmmY7QWWn7OhKlcPOnirHJpP1F.jpg",
+  },
+  {
+    id: 5,
+    title: "movie5",
+    poster_path: "/jeyTQrNEpyE1LZIgVlswYh3sc34.jpg",
+  },
+  {
+    id: 6,
+    title: "movie6",
+    poster_path: "/b0Ej6fnXAP8fK75hlyi2jKqdhHz.jpg",
+  },
+];
 
 const Index = () => {
   return (
@@ -14,7 +48,7 @@ const Index = () => {
       {/* Changes page title visible on the header */}
       <TitleStack />
       <Image source={require("../../../assets/headerBg.png")} />
-      <View className="container flex h-full w-full flex-row space-x-10 bg-black">
+      <View className="container flex h-44 w-full flex-row space-x-10 bg-black">
         <Image
           style={{
             resizeMode: "cover",
@@ -85,6 +119,16 @@ const Index = () => {
             </View>
           </View>
         </View>
+      </View>
+      <View className="container h-full w-full bg-black">
+        <Text className="mb-4 pl-4  uppercase text-white">
+          PELÍCULAS FAVORITAS
+        </Text>
+        {defaultArray.length > 0 && <HorizontalList dataList={defaultArray} />}
+        <Text className="mb-4 pl-4  uppercase text-white">
+          SERIES FAVORITAS
+        </Text>
+        {defaultArray.length > 0 && <HorizontalList dataList={defaultArray} />}
       </View>
     </SafeAreaView>
   );

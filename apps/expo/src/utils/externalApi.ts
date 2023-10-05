@@ -17,6 +17,23 @@ export const getTrendingFromApiAsync = async (
   }
 };
 
+export const getNowPlayingFromApiAsync = async (
+  setAction: React.Dispatch<any>,
+) => {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${THE_MOVIE_DB_APIKEY}`,
+    );
+    const json = (await response.json()) as {
+      page: number;
+      results: Array<any>;
+    };
+    setAction(json.results);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 // TODO: ADD functions for the other endpoints
 // ENDPOINTS:
 // https://api.themoviedb.org/3/tv/on_the_air
